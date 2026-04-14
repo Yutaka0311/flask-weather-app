@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Weather App - Search for Weather{% endblock %}
+
+{% block content %}
+<div class="search-section">
+    <form id="weatherForm" class="search-form">
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="cityInput" 
+                placeholder="Enter city name..." 
+                required
+                autocomplete="off"
+            >
+            <button type="submit" class="search-btn">Search</button>
+        </div>
+        <p class="hint">Try: London, New York, Tokyo, Paris...</p>
+    </form>
+</div>
+
+<div id="loadingSpinner" class="spinner hidden"></div>
+
+<div id="errorMessage" class="error-message hidden"></div>
+
+<div id="weatherResult" class="weather-result hidden">
+    <div class="weather-card">
+        <div class="weather-header">
+            <h2 id="cityName"></h2>
+            <p id="weatherDate" class="weather-date"></p>
+        </div>
+        
+        <div class="weather-main">
+            <div class="weather-icon-section">
+                <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon">
+            </div>
+            
+            <div class="weather-info">
+                <div class="temperature-section">
+                    <span id="temperature" class="temperature"></span>
+                    <span class="unit">°C</span>
+                </div>
+                <p id="weatherCondition" class="weather-condition"></p>
+                <p id="weatherDescription" class="weather-description"></p>
+            </div>
+        </div>
+        
+        <div class="weather-details">
+            <div class="detail-item">
+                <span class="detail-label">💧 Humidity</span>
+                <span id="humidity" class="detail-value"></span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">💨 Wind Speed</span>
+                <span id="windSpeed" class="detail-value"></span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">🌡️ Feels Like</span>
+                <span id="feelsLike" class="detail-value"></span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">🔬 Pressure</span>
+                <span id="pressure" class="detail-value"></span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">☁️ Cloudiness</span>
+                <span id="cloudiness" class="detail-value"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
