@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("local_time =", data.local_time);
 
         // Populate weather data
-        document.getElementById('cityName').textContent = '${data.city}, ${data.country}';
+        document.getElementById('cityName').textContent = `${data.city}, ${data.country}`;
 
         document.getElementById('weatherDate').textContent = new Date().toLocaleDateString('en-US', {   
             weekday: 'long',
