@@ -45,15 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    function displayWeather(data) {
+    function displayWeather(data) {   
+        console.log("displayWeather動いた");
+        console.log(data);
+        console.log("local_time =", data.local_time);
+
         // Populate weather data
-        document.getElementById('cityName').textContent = `${data.city}, ${data.country}`;
-        document.getElementById('weatherDate').textContent = new Date().toLocaleDateString('en-US', {
+        document.getElementById('cityName').textContent = '${data.city}, ${data.country}';
+
+        document.getElementById('weatherDate').textContent = new Date().toLocaleDateString('en-US', {   
             weekday: 'long',
             year: 'numeric',
             month: 'long',
             day: 'numeric'
+
+
         });
+        document.getElementById("localTime").textContent = "Local time: " + data.local_time;
         
         document.getElementById('temperature').textContent = data.temperature;
         document.getElementById('weatherCondition').textContent = data.condition;

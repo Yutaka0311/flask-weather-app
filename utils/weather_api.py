@@ -70,7 +70,8 @@ class WeatherAPI:
                 'condition': data.get('weather', [{}])[0].get('main'),
                 'description': data.get('weather', [{}])[0].get('description'),
                 'icon': data.get('weather', [{}])[0].get('icon'),
-                'cloudiness': data.get('clouds', {}).get('all')
+                'cloudiness': data.get('clouds', {}).get('all'),
+                'timezone': data.get('timezone', 0),
             }
         except (KeyError, IndexError, TypeError):
             return {'error': 'Error parsing weather data'}

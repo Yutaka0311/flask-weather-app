@@ -153,6 +153,16 @@ main {
     width: 100%;
 }
 
+#localTime {
+    #localTime {
+    display: block;
+    font-size: 18px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+}
+
 .weather-result.hidden {
     display: none;
 }
