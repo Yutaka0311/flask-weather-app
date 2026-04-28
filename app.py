@@ -1,10 +1,14 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 from config import Config
 from utils.weather_api import weather_api
 from datetime import datetime, timezone, timedelta
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+@app.route('/robots.txt')
+def robots_txt():
+    return Response("User-agent: *\nAllow: /\n", mimetype="text/plain")
 
 @app.route('/')
 def index():

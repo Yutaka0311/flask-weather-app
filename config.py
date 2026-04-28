@@ -10,7 +10,7 @@ class Config:
     DEBUG = os.getenv('DEBUG', False)
     
     # Weather API Configuration
-    WEATHER_API_KEY = os.getenv('WEATHER_API_KEY')
+    WEATHER_API_KEY = "01ad148a92b74e4aa8188ae92075598b"
     WEATHER_API_BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
     
     # Cache settings (in seconds)
